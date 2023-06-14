@@ -1,0 +1,17 @@
+<div class="wrapper">
+    <div class="tabs__wrapper">
+        <img class="logo" src="/assets/logo.svg" alt="">
+        <div class="tabs">
+            <app-home-svg class="tab" routerLink="/" [fill]="currentRoute==''? '#FFFFFF': '#5A698F'"></app-home-svg>
+            <app-movies-svg class="tab" routerLink="/movies" [fill]="currentRoute=='movies'? '#FFFFFF': '#5A698F'"></app-movies-svg>
+            <app-tv-svg class="tab" routerLink="/tv" [fill]="currentRoute=='tv'? '#FFFFFF': '#5A698F'"></app-tv-svg>
+            <app-bookmarked-svg class="tab" routerLink="/bookmarked" [fill]="currentRoute=='bookmarked'? '#FFFFFF': '#5A698F'"></app-bookmarked-svg>
+        </div>
+    </div>
+    <div class="user" (click)="logoutMenuIsOpen()" >
+        <img src="/assets/image-avatar.png" alt="avatar">
+        <div *ngIf="logoutMenu" class="logout__menu" (click)="logout()">
+            Log Out
+        </div>
+    </div>
+</div>

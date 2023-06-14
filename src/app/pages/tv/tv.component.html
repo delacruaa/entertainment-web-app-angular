@@ -1,0 +1,14 @@
+   
+    <div class="container"> 
+        <app-sidebar class="sidebar"></app-sidebar>
+        <div *ngIf="loading" class="loading">Loading...</div>
+        <div *ngIf="errorMessage" class="errorMessage">{{errorMessage}}</div>
+        <div class="wrapper" *ngIf="!loading && !errorMessage">
+            <h1 class="title">TV Series</h1>
+            <div class="recommend__wrapper">
+                <app-film-item  *ngFor="let regularFilm of regularFIlms; let i = index " [films]="films"  [regularFilm]="regularFilm"></app-film-item>
+               
+            </div>
+        </div>
+    </div>
+
