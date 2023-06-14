@@ -31,6 +31,7 @@ export class RegisterComponent implements OnInit {
       this.confirmPassword=true
       return;
     }
+    this.submitted=true
     if(this.loginForm.valid) {
       this.submitted=false
       this.authService.signUp(this.loginForm.value['email'], this.loginForm.value['password'])
